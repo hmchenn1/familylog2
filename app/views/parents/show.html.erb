@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @parent.name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @parent.email %>
+</p>
+<h2>Kids</h2>
+<% @parent.kids.each do |kid| %>
+  <p>
+    <b>Name:</b>
+    <%= kid.name %>
+  </p>
+ 
+  <p>
+    <b>Date:</b>
+    <%= kid.date %>
+  </p>
+	<p>
+    <b>Performance:</b>
+    <%= kid.performance %>
+  </p>
+
+
+<% end %>
+
+
+<h2>Add a Kid Perform daily report:</h2>
+<%= form_for([@parent, @parent.kids.build]) do |f| %>
+  <div class="field">
+    <%= f.label :Name %><br />
+    <%= f.text_field :name %>
+  </div>
+   <div class="field">
+    <%= f.label :Date %><br />
+    <%= f.text_field :date %>
+  </div>
+	<div class="field">
+    <%= f.label :Performance %><br />
+    <%= f.text_field :performance %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
+
+<%= link_to 'Edit', edit_parent_path(@parent) %> |
+<%= link_to 'Back', parents_path %>
