@@ -9,7 +9,7 @@
   <b>Email:</b>
   <%= @parent.email %>
 </p>
-<h2>Kids</h2>
+<h2><%= @parent.name %>'s Kids</h2>
 <% @parent.kids.each do |kid| %>
   <p>
     <b>Name:</b>

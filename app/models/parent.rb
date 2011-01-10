@@ -6,9 +6,9 @@
      validates :name,  :presence => true,
                        :length   => { :maximum => 100 }
      validates :email, :presence => true,
-                       :uniqueness => true,
-                       :format   => { :with => email_regex },
-                       :length   => { :minimum => 6 }
+                       #:uniqueness => true,
+                      #:format   => { :with => email_regex }
+                      :length   => { :minimum => 6 }
      has_many :kids
  end
  
